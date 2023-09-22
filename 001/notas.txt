@@ -7,7 +7,61 @@ Metas:
 - "Responsive" o aceptable. 
 
 Comandos utilizados en el ejemplo:
-
 npx create-react-app todo-app --template typescript
 //npx create-react-app nombreArchivo --template typescript
+---------------------------------------------------
+La ventaja de utilizar una carpeta context es la de utilizar un context para manejar una lista de tareas o un Todo como en el video es que el contexto sea el que distribuya la información del estado o la información que deseamos que sea compartida entre todos los componentes sin importar que tan anidados esten dentro de otros componentes. Basicamente es un contenedor o espacio en el cual nosotros podemos utilizar el consumir información a lo largo de diferentes componentes sin necesidad de mandar la información atravez de los props
 
+comentario: la diferencia entre un archivo .ts y un .tsx más haya del apartado estetico es el hecho de que un .tsx es bien sabido que esta asociado a un componente react. Mientras que si es .ts se puede hacer referencia a que son interfaces, funciones o algo propio de typescript que no es un componente de React.
+Existen personas que detestan esta practica y no les gusta poner .tsx aunque se este trabajando con componentes de React y esta es una decición basada meramente en gustos. Yo me uno  a la idea de utilizar .tsx cuando se trabaja con componentes para mantener un orden mas intuitivo.
+
+En el video se crean carpetas separadas para una distribución más comprensible, con las siguientes asignaciones:
+
+1. Componentes:
+No requiere más información.
+ Utiliza esta carpeta para los: 
+  1.01. Reducer:
+   - Un reducer es una función en React que se utiliza para gestionar y actualizar el estado de una aplicación.
+   - Se utiliza comúnmente con la API useReducer de React o con el estado del componente en el método setState.
+   - Los reducers toman un estado actual y una acción como argumentos y devuelven un nuevo estado. Son esenciales para gestionar estados complejos en aplicaciones React.
+   - Por lo general, se asocian con el patrón de gestión de estado conocido como Redux, pero también se pueden utilizar en contextos más simples sin Redux.
+  
+  1.02. Provider:
+   - Un provider es un componente en React que proporciona datos a otros componentes en la jerarquía de 
+componentes. 
+   - Se utiliza comúnmente en conjunto con el contexto para pasar datos globales, como el estado de la aplicación, a componentes secundarios sin necesidad de pasar explícitamente las propiedades a través de la jerarquía de componentes.
+   - Un ejemplo es el Context.Provider en React, que permite a los componentes suscritos acceder a los datos proporcionados por el contexto.
+
+
+2. Context:
+- El contexto en React es una característica que permite compartir datos entre componentes sin tener que pasar props manualmente a través de cada nivel de la jerarquía de componentes.
+- Se utiliza junto con un Provider que envuelve a un conjunto de componentes que necesitan acceder a los datos del contexto.
+- El contexto es particularmente útil para compartir datos globales, como el estado de la aplicación o la información del usuario autenticado.
+
+3. Hook:
+- En React, los hooks son funciones especiales que permiten a los componentes funcionales acceder a características de React, como el estado o el ciclo de vida, sin necesidad de escribir una clase de componente.
+- useState, useEffect, useContext, y useReducer son ejemplos de hooks proporcionados por React.
+- Los hooks, como useReducer y useContext, a menudo se utilizan en combinación con contextos y reducers para gestionar el estado de manera eficiente en componentes funcionales.
+
+4. Interface:
+- Permite expresar una especificación para un determinado contenido, este mismo es muy util en typescript al permitirnos ser más estrictos con los tipos  que utilizaremos dado que el mismo se encontrara constantemente comprobando que no hayamos violado algun comportamiento especificado.
+----------------------------------------------------
+
+001
+  -> lista-ecommerce
+     -> src
+        -> components
+           -> productItem.tsx: 31 lineas
+           -> productList.tsx: 14 lineas
+        -> context
+           -> productContext.ts: 10 lineas
+           -> productProvider.ts: 79 lineas
+           -> productReducer.ts: 30 lineas
+        -> hooks
+           -> useProducts.ts: 13 lineas
+        -> interfaces
+           -> interfaces.ts: 15 lineas
+        -> Cart.tsx: 12
+     -> App.tsx: 4 lineas
+El resto se puede ignorar dado que son archivos de la practica;
+Total: 
