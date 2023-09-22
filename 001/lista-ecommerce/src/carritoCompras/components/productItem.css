@@ -1,0 +1,85 @@
+.product-item {
+  font-size: 12px;
+  border-radius: 6px;
+  width: 30%;
+  height: 20vh;
+  margin: 2vh;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-item.sold {
+  text-decoration: line-through;
+  /*Ver que se podría agregar*/
+}
+
+.product-image {
+  max-width: 200%;
+  max-height: 200%;
+}
+
+.product-item:hover .product-image {
+  filter: blur(1px);
+  filter: brightness(0.6);
+}
+
+.product-title {
+  font-size: 15px;
+  text-align: center;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  position: fixed;
+  color: #fff;
+  transition: opacity 0.2s ease;
+  top: 2vh;
+  opacity: 1;
+}
+
+
+.product-item:hover .product-info {
+  top: -3vh;
+}
+
+.product-info {
+  padding-right: 1vh;
+  padding-left: 1vh;
+  position: fixed;
+  color: #fff;
+  transition: opacity 0.3s ease;
+  top: 4vh;
+  max-height: 12vh;
+  overflow: hidden;
+  line-height: 13px;
+  text-align: justify;
+  opacity: 0;
+}
+
+.product-item:hover .product-info {
+  top: 5vh;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  position: fixed;
+  text-align: center;
+  bottom: 3%;
+  right: 50%;
+  transform: translateX(50%);
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+}
+
+.product-item:hover .product-price,
+.product-item:hover .product-info {
+  opacity: 1;
+}

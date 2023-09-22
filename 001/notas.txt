@@ -1,0 +1,13 @@
+Video a analizar: "https://www.youtube.com/watch?v=8HE657KssxE&ab_channel=FernandoHerrera"
+
+Metas:
+- 2000 Lineas de código sin cóntar las del tutorial.
+- Con react, react-router-dom.
+- "intuitivo", "interactivo".
+- "Responsive" o aceptable. 
+
+Comandos utilizados en el ejemplo:
+
+npx create-react-app todo-app --template typescript
+//npx create-react-app nombreArchivo --template typescript
+
